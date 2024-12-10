@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #00605f;
+  --secondary-color: #017479;
+  --text-dark: #0f172a;
+  --text-light: #94a3b8;
+  --white: #ffffff;
+  --max-width: 1400px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(
+      to right,
+      rgba(2, 82, 89, 0.9),
+      rgba(255, 255, 255, 0)
+    ),
+    url("pic1.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: var(--max-width);
+  min-height: 100vh;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__logo img {
+  max-width: 70px;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.search {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--white);
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+
+.search input {
+  width: 100%;
+  font-size: 1rem;
+  color: var(--primary-color);
+  outline: none;
+  border: none;
+}
+
+.search input::placeholder {
+  color: var(--secondary-color);
+}
+
+.search span {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.login {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login:hover {
+  background-color: var(--secondary-color);
+}
+
+.login span {
+  padding: 5px 8px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  background-color: var(--white);
+  border-radius: 100%;
+}
+
+.destination__container {
+  position: relative;
+  padding: 5rem 0 5rem 5rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bg__img__1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-100%);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.bg__img__2 {
+  position: absolute;
+  bottom: 2rem;
+  right: 50%;
+  transform: translateX(100%);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.socials {
+  position: absolute;
+  top: 25rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.socials::after {
+  position: absolute;
+  content: "";
+  top: -22rem;
+  left: 15px;
+  height: 15rem;
+  width: 2px;
+  background-color: var(--white);
+}
+
+.socials span {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.content h1 {
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.content h1 span {
+  -webkit-text-stroke: 2px var(--white);
+  -webkit-text-fill-color: transparent;
+}
+
+.content p {
+  max-width: 350px;
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+  color: var(--white);
+}
+
+.content .btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.destination__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.destination__card {
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+}
+
+.destination__card img {
+  width: 100%;
+}
+
+.card__content {
+  padding: 1rem;
+}
+
+.card__content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card__content p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  color: var(--text-light);
+}
+
+.card__content .btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media (width < 1200px) {
+  .search {
+    max-width: 235px;
+  }
+
+  .destination__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width < 900px) {
+  .nav__links {
+    display: none;
+  }
+
+  .content h1 {
+    font-size: 4rem;
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width < 600px) {
+  .search {
+    display: none;
+  }
+
+  .destination__container {
+    padding-left: 3rem;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+</style>
+    <title>Web Design Mastery | Explore Destinations</title>
+  </head>
+  <body >
+    <div class="container">
+      <nav>
+        <div class="nav__logo">
+          <img src="pic2.jpg" alt="logo" style="border-radius: 50%;"/>
+         
+        </div>
+        <ul class="nav__links">
+          <li class="link"><a href="#">Home</a></li>
+          <li class="link"><a href="#">Destinations</a></li>
+          <li class="link"><a href="#">Contact Us</a></li>
+          <li class="link"><a href="#">Blog</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" placeholder="Search" />
+          <span><i class="ri-search-line"></i></span>
+        </div>
+        <div class="login">
+          <span><i class="ri-user-3-fill"></i></span>
+          Log In
+        </div>
+      </nav>
+      <div class="destination__container">
+        
+        <div class="socials">
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-youtube-fill"></i></span>
+        </div>
+        <div class="content">
+          <h1>EXPLORE<br />DREAM<br /><span>DESTINATION</span></h1>
+          <p>
+            It encourages exploration of unfamiliar territories, embracing
+            diverse cultures and landscapes, while pursuing the desired
+            destination that captivates the heart and ignites a sense of wonder.
+            Breathtaking mountain views and outdoor activities.
+            Famous Opera House and beautiful harbor.
+            Whether you're into history, nature, culture, or simply relaxing by the beach, these destinations offer something for everyone. 🌍✈️
+
+          </p>
+          <button class="btn">BOOK NOW</button>
+        </div>
+        <div class="destination__grid">
+          <div class="destination__card">
+            <img src="pic3.jpg" alt="destination" />
+            <div class="card__content">
+              <h4>10 Must-Visit Hidden Gems</h4>
+              <p>
+                These destinations are characterized by their stunning natural landscapes, rich cultural heritage, and the sense of tranquility they offer away from the usual tourist paths. From serene valleys and hill stations to historical forts and picturesque villages, each location presents a unique experience. 
+              </p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="destination__card">
+            <img src="pic5.jpg" alt="destination" />
+            <div class="card__content">
+              <h4>Immersive Cultural Experiences</h4>
+              <p>
+                Dive deep into the vibrant cultures of dream destinations,
+                showcasing the rituals, traditions, and local customs that make
+                these places truly unique.shortend definition
+                Immersive cultural experiences involve deeply engaging with the traditions, lifestyles, and customs of a community
+              </p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="destination__card">
+            <img src="pic6.jpg" alt="destination" />
+            <div class="card__content">
+              <h4>From Dreams to Reality</h4>
+              <p>
+                Explore expert tips, and hidden gems, ensuring every moment of
+                your trip is optimized, and make the most of time in your
+                long-awaited dream location.Famous for stunning sunsets and crystal-clear waters.A tropical paradise with vibrant marine life.Lush rainforests and volcanic landscapes.
+              </p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
